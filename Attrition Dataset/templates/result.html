@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EMPLOYEE ATTRITION</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+	</head>
+	
+	<body>
+	<div class="img"></div>
+	<h2>Employee Attrition Predictor Application</h2>
+	
+	<!-- Result -->
+		
+			{% if classification==1 %}
+			<div class="results">	
+				<img class="result_pic" src="{{ url_for('static', filename='caution.png') }}" alt="Caution"><br>
+				<h1>Prediction: <span>As per our algorithm, this emplyoyee is most likely to leave our organisation.</span></h1><br>
+				If you don't create a great, rewarding place for people to work, they won't do great work.<br><br>
+				
+				Our employees are the most valuable members, without them the company means nothing, so a huge shoutout to them and keep appreciating them.
+				
+			
+			{% elif classification==0 %}
+				<div class="results">
+				<img class="result_pic" src="{{ url_for('static', filename='goodjob.jpg') }}" alt="Great Job"><br>
+				<h1>Prediction: <span>As per our algorithm, this emplyoyee is most likely to keep working in our organisation.</span></h1><br>
+				The way your employees feel is the way your customers will feel.<br><br>
+				
+				Our employees are the most valuable members, without them the company means nothing, so a huge shoutout to them and keep appreciating them.
+				
+			{% endif %}
+				
+		</div>	
+	
+		<!-- Footer -->
+			<div class='footer'>
+				<div class="contact">
+					<a target="_blank" href="https://github.com/libinkoshy/Machine_Learning_Projects"><i class="fab fa-github fa-lg contact-icon"></i></a>
+					<a target="_blank" href="https://www.linkedin.com/in/libinkoshy"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+				</div>
+			</div>
+			
+	</body>
+	
+</html>

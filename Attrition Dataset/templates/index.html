@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>EMPLOYEE ATTRITION</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+	</head>
+	
+	<body>
+	<div class="img"></div>
+	<h2>Employee Attrition Predictor Application</h2>
+	<div class="main">
+	<form action="{{ url_for('predict') }}" method="POST">
+	<table style="width:100%">	
+	<td>
+		<!--Gender:-->		 
+				Gender:<input type="radio" name="Gender" value="Male">
+				<label for="Male">Male</label>
+				<input type="radio" id="female" name="Gender" value="Female">
+				<label for="Female">Female</label><br>
+				
+	
+
+		<!--Marital Status:-->	
+				Marital Status:<input type="radio" id="Single" name="MaritalStatus" value="Single">
+				<label for="Single">Single</label>
+				<input type="radio" id="Married" name="MaritalStatus" value="Married">
+				<label for="Married">Married</label>
+				<input type="radio" id="Divorced" name="MaritalStatus" value="Divorced">
+				<label for="Divorced">Divorced</label><br>	
+	
+	    <!--Age-->
+				 <label class="text" for="Age">Age:</label>
+				 <input type="text" name="Age" placeholder="Employee's age eg.34"><br>
+				 
+		<!--Monthly Income:-->
+				 <label class="text" for="MonthlyIncome">Monthly Income:</label>
+				 <input type="text" name="MonthlyIncome" placeholder="Employee's Monthly Salary eg. 5000"><br>
+				 
+		<!--Distance From Home-->
+				 <label class="text" for="DistanceFromHome">Distance from home:</label>
+				 <input type="text" name="DistanceFromHome" placeholder="How far does the employee stay? (in km.) eg. 2"><br>	
+
+		<!--Years in current role:-->
+				 <label class="text" for="YearsInCurrentRole">Years in current role:</label>
+				 <input type="text" name="YearsInCurrentRole" placeholder="Total years in current position eg. 4"><br>
+				 
+		<!--Years at company:-->
+				 <label class="text" for="YearsAtCompany">Years at company:</label>
+				 <input type="text" name="YearsAtCompany" placeholder="Total years in our organisation eg. 5"><br>			 
+
+		<!--Total working years:-->
+				 <label class="text" for="TotalWorkingYears">Total working years:</label>
+				 <input type="text" name="TotalWorkingYears" placeholder="Employee's total tenure eg. 7"><br>
+
+				 
+		<!--Years since last promotion:-->
+				 <label class="text" for="YearsSinceLastPromotion">Years since last promotion:</label>
+				 <input type="text" name="YearsSinceLastPromotion" placeholder="Total years since promoted eg. 4">	<br>
+				
+		<!--Years with current Manager:-->
+				 <label class="text" for="YearsWithCurrManager">Years with current Manager:</label>
+				 <input type="text" name="YearsWithCurrManager" placeholder="Total years with current Manager eg. 2"><br>
+
+						 
+		<!--No. of companies worked:-->
+				 <label class="text" for="NumCompaniesWorked">No. of companies worked:</label>
+				 <input type="text" name="NumCompaniesWorked" placeholder="Number of companies the employee has worked before eg. 2"><br>
+				
+				 
+		<!--Salary hike percentage:-->
+				 <label class="text" for="PercentSalaryHike">Salary hike percentage:</label>
+				 <input type="text" name="PercentSalaryHike" placeholder="Employee's salary hike percentage eg. 20"><br>				 
+
+				 
+		<!--No. of training last year:-->
+				 <label class="text" for="TrainingTimesLastYear">No. of training last year:</label>
+				 <input type="text" name="TrainingTimesLastYear" placeholder="Number of trainings attended by the employee eg. 6">	<br>	 
+
+				 
+	
+		</td>
+		<td>
+			
+			 
+
+		<!-- Education -->
+                <select class="form-input align-center" name="Education">
+						<option value="none">--- Education ---</option>
+						<option value="1">Below College</option>
+                        <option value="2">College</option>
+                        <option value="3">Bachelor</option>						
+						<option value="4">Master</option>
+                        <option value="5">Doctor</option>						
+                </select><br>		
+				
+
+				
+		<!-- Education Field -->
+                <select class="form-input align-center" name="EducationField">
+						<option value="none">--- Education Field ---</option>
+						<option value="Human Resources">Human Resources</option>
+                        <option value="Life Sciences">Life Sciences</option>
+                        <option value="Marketing">Marketing</option>
+						<option value="Medical">Medical</option>
+                        <option value="Other">Other</option>
+                        <option value="Technical Degree">Technical Degree</option>						
+                </select><br>
+
+
+	
+		<!-- Department -->
+                <select class="form-input align-center" name="Department">
+						<option value="none">--- Department ---</option>
+						<option value="Human Resources">Human Resources</option>
+                        <option value="Research & Development">Research & Development</option>
+                        <option value="Sales">Sales</option>
+                </select><br>
+				
+	
+		<!-- Job Role -->
+                <select class="form-input align-center" name="JobRole">
+						<option value="none">--- Job Role ---</option>
+						<option value="Healthcare Representative">Healthcare Representative</option>
+						<option value="Human Resources">Human Resources</option>
+                        <option value="Laboratory Technician">Laboratory Technician</option>
+                        <option value="Manager">Manager</option>
+						<option value="Manufacturing Director">Manufacturing Director</option>
+                        <option value="Research Director">Research Director</option>
+                        <option value="Research Scientist">Research Scientist</option>		
+                        <option value="Sales Executive">Sales Executive</option>
+                        <option value="Sales Representative">Sales Representative</option>							
+                </select><br>
+		 				 
+
+				 
+		<!-- Business Travel -->
+                <select class="form-input align-center" name="BusinessTravel">
+						<option value="none">--- Business Travel ---</option>
+						<option value="Non-Travel">Non Travel</option>
+                        <option value="Travel_Frequently">Travel Frequently</option>
+                        <option value="Travel_Rarely">Travel Rarely</option>
+                </select><br>		
+				 
+				 
+					 
+		<!--Over Time:-->	
+				Over Time:</h6><input type="radio" id="Yes" name="OverTime" value="Yes">
+				<label for="Yes">Yes</label>
+				<input type="radio" id="No" name="OverTime" value="No">
+				<label for="No">No</label><br>
+
+		<!--Job Level:-->
+				Job Level:<input type="radio" name="JobLevel" value="1">
+				<label for="JobLevel">1</label>
+				<input type="radio" name="JobLevel" value="2">
+				<label for="JobLevel">2</label>
+				<input type="radio" name="JobLevel" value="3">
+				<label for="JobLevel">3</label>
+				<input type="radio" name="JobLevel" value="4">
+				<label for="JobLevel">4</label>
+				<input type="radio" name="JobLevel" value="5">
+				<label for="JobLevel">5</label><br>
+				 
+
+		<!--Environment Satisfaction:-->
+				Environment Satisfaction:<input type="radio" name="EnvironmentSatisfaction" value="1">
+				<label for="EnvironmentSatisfaction">1</label>
+				<input type="radio" name="EnvironmentSatisfaction" value="2">
+				<label for="EnvironmentSatisfaction">2</label>
+				<input type="radio" name="EnvironmentSatisfaction" value="3">
+				<label for="EnvironmentSatisfaction">3</label>
+				<input type="radio" name="EnvironmentSatisfaction" value="4">
+				<label for="EnvironmentSatisfaction">4</label><br>		
+
+
+		<!--Job Involvement:-->
+				Job Involvement:<input type="radio" name="JobInvolvement" value="1">
+				<label for="JobInvolvement">1</label>
+				<input type="radio" name="JobInvolvement" value="2">
+				<label for="JobInvolvement">2</label>
+				<input type="radio" name="JobInvolvement" value="3">
+				<label for="JobInvolvement">3</label>
+				<input type="radio" name="JobInvolvement" value="4">
+				<label for="JobInvolvement">4</label><br>				 
+		 
+
+		<!--JobSatisfaction:-->
+				Job Satisfaction:<input type="radio" name="JobSatisfaction" value="1">
+				<label for="JobSatisfaction">1</label>
+				<input type="radio" name="JobSatisfaction" value="2">
+				<label for="JobSatisfaction">2</label>
+				<input type="radio" name="JobSatisfaction" value="3">
+				<label for="JobSatisfaction">3</label>
+				<input type="radio" name="JobSatisfaction" value="4">
+				<label for="JobSatisfaction">4</label><br>	
+				
+		<!--PerformanceRating:-->
+				Performance Rating:<input type="radio" name="PerformanceRating" value="1">
+				<label for="PerformanceRating">1</label>
+				<input type="radio" name="PerformanceRating" value="2">
+				<label for="PerformanceRating">2</label>
+				<input type="radio" name="PerformanceRating" value="3">
+				<label for="PerformanceRating">3</label>
+				<input type="radio" name="PerformanceRating" value="4">
+				<label for="PerformanceRating">4</label><br>
+				
+		<!--RelationshipSatisfaction:-->
+				Relationship Satisfaction:<input type="radio" name="RelationshipSatisfaction" value="1">
+				<label for="RelationshipSatisfaction">1</label>
+				<input type="radio" name="RelationshipSatisfaction" value="2">
+				<label for="RelationshipSatisfaction">2</label>
+				<input type="radio" name="RelationshipSatisfaction" value="3">
+				<label for="RelationshipSatisfaction">3</label>
+				<input type="radio" name="RelationshipSatisfaction" value="4">
+				<label for="RelationshipSatisfaction">4</label><br>
+				
+		<!--WorkLifeBalance:-->
+				WorkLife Balance:<input type="radio" name="WorkLifeBalance" value="1">
+				<label for="WorkLifeBalance">1</label>
+				<input type="radio" name="WorkLifeBalance" value="2">
+				<label for="WorkLifeBalance">2</label>
+				<input type="radio" name="WorkLifeBalance" value="3">
+				<label for="WorkLifeBalance">3</label>
+				<input type="radio" name="WorkLifeBalance" value="4">
+				<label for="WorkLifeBalance">4</label>
+
+		</td>
+	</table>
+	<div class="predict">
+	<input type="submit" class="my-cta-button" value="Predict">
+	</div>
+	</form>
+	</div>		   
+		<!-- Footer -->
+			<div class='footer'>
+				<div class="contact">
+					<a target="_blank" href="https://github.com/libinkoshy/Machine_Learning_Projects"><i class="fab fa-github fa-lg contact-icon"></i></a>
+					<a target="_blank" href="https://www.linkedin.com/in/libinkoshy"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+				</div>
+			</div>
+			
+	</body>
+	
+</html>

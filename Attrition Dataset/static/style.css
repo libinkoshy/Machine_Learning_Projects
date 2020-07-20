@@ -1,0 +1,148 @@
+
+body{
+	font-family: 'Basic';
+	color: white;
+	line-height: 1.8;
+  
+
+}
+.img {
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-size:100% 100%;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+h2{
+	font-size: 25px;
+	background-color: black;
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+	font-family: 'Cairo';
+	color:white;
+	text-align: center;
+
+}
+
+.main{
+	font-size:18px;
+	padding-left:20px;
+
+}
+
+
+
+label.text{
+	display: inline-block;
+	width:220px;
+	padding-bottom:5px;
+
+}
+
+
+input[type="text"] {
+    width: 300px;
+	height:20px;
+	text-align: center;
+	margin-right:20px;
+	border-radius: 3px;
+	border: 0;
+}
+
+input[type="radio"] {
+	cursor:pointer;
+	height: 15px;
+	width: 15px;
+}
+
+
+select{
+	text-align: center;
+    width: 200px;
+	height:30px;
+	
+}
+
+
+	
+.form-input{
+	text-align: center;
+	border-radius: 3px;
+	border: 0;
+}
+
+.align-center{
+	padding: 0 10px;
+}
+
+/* Predict Button */
+.predict{
+	text-align:center;
+}
+	
+	
+.my-cta-button{
+	background: white;
+   	border: 2px solid #000000;
+	border-radius: 3px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+	margin-top: 10px;
+    padding: 7.5px 36px;
+    color: #000000;
+   	font: bold 20px/1 'Cairo';
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: #05C1FF;
+	box-shadow: 0 15px 16px 0 rgba(0,0,0,2), 0 17px 50px 0 rgba(0,0,0,2);
+    border: 2px solid #ffffff;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+.results{
+	background-color: white;
+	color: black;
+	resize: both;
+	width:500px;
+	padding-left:50px;
+	padding-right:50px;
+	position: relative;
+    left: 70px;
+}
+
+
+.result_pic{
+	width:200px;
+	height:150px;
+}	
+
+/* Contact */
+.contact-icon{
+	color: white;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: black;
+}
+
+/* Footer */
+.footer{
+	/* background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+	text-align: right	;
+	/* background-color: black; */
+}
+
